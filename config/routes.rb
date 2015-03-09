@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
+  
+  resources :articles do
+    resources :comments
+  end
+  
+  root 'welcome#index'
+  #get '/articles/:id(.:format)' => 'articles#show'
+  #get '/articles(.:format)'     => 'articles#index'
+  #get '/articles/:id(.:format)' => 'articles#destroy'
+
+# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
